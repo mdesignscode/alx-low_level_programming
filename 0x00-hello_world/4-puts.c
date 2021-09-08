@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/**
  * main - Prints string
  * Description: prints "\"Programming is like building a multilingual puzzle"
  * Return: 0
