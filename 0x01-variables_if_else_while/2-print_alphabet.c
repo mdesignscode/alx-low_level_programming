@@ -1,23 +1,19 @@
 #include <stdio.h>
-#include <ctype.h>
-
 /**
- * main - prints lowercase alphabets
- * Description: prints lowercase alphabets
- * Return: Returns 0 for successfull
+ * main - 
+ * 
+ * Description: 
+ * 
+ * Return: Always 0.
  */
 int main(void)
 {
-	char c;
-	char s = '\n';
-
-	for (c = 65; c <= 90; c++)
-	{
-	char result = tolower(c);
-
-	putchar(result);
-	}
-	putchar(s);
-
-	return (0);
+        int az;
+	int nl;
+	
+	nl = '\n';
+	for(az = 'a'; az <= 'z'; az++) {
+		putchar(az);
+		putchar(nl)
+        return (0);
 }
