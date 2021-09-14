@@ -7,11 +7,13 @@
 int main(void)
 {
 	int dig;
+	char nl;
 
+	nl = '\n';
 	for (dig = 0; dig <= 9; dig++)
 	{
 		printf("%d", dig);
 	}
-	printf("\n");
+	printf("%c", nl);
 	return (0);
 }
