@@ -6,14 +6,12 @@
  */
 int main(void)
 {
-	int dig;
-	char nl;
+	int n;
 
-	nl = '\n';
-	for (dig = 0; dig <= 9; dig++)
+	for (n = 0; n <= 9; n++)
 	{
-		printf("%d", dig);
+		printf("%d", n);
 	}
-	printf("%c", nl);
+	printf("\n");
 	return (0);
 }
