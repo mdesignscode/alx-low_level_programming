@@ -1,1 +1,1 @@
-I'm starting to learn to code in *C* today
+This is my journey on learning to code in *C* through the ALX Software Engineering Program
