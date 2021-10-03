@@ -27,41 +27,4 @@ void print_square(int size)
 	if (n <= 0)
 	{
 		_putchar('\n');
-	}int i;
-	int n;
-
-	for (i = 1; i <= size; i++)
-	{
-		for (n = 1; n <= size; n++)
-		{
-			_putchar('#');
-		}
-		for (n = 1; n <= size; n++)
-		{
-			_putchar('#');
-		}
-		_putchar('\n');
 	}
-	if (n <= 0)
-	{
-		_putchar('\n');
-	}int i;
-	int n;
-
-	for (i = 1; i <= size; i++)
-	{
-		for (n = 1; n <= size; n++)
-		{
-			_putchar('#');
-		}
-		for (n = 1; n <= size; n++)
-		{
-			_putchar('#');
-		}
-		_putchar('\n');
-	}
-	if (n <= 0)
-	{
-		_putchar('\n');
-	}
-}
