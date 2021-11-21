@@ -1,54 +1,29 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * isLower - determines whether ascii is lowercase
- * @c: character
- * Return: 1 if true, 0 if false
+ * cap_string - capitalizes all words of a string.
+ * @str: string to return.
+ *
+ * Return: 0.
  */
-int isLower(char c)
+char *cap_string(char *str)
 {
-	return (c >= 97 && c <= 122);
-}
+	int i, j;
+	char delimiter[] = {" \t\n,;.!?\"(){}"};
+	char *ptr = delimiter;
 
-/**
- * isDelimiter - determines whether ascii is a delimiter
- * @c: character
- * Return: 1 if true, 0 if false
- */
-int isDelimiter(char c)
-{
-	int i;
-	char delimiter[] = " \t\n,.!?\"(){}";
-
-	for (i = 0; i < 12; i++)
-		if (c == delimiter[i])
-			return (1);
-	return (0);
-}
-
-/**
- * cap_string - capitalizes all words of a string
- * @s: input string
- * Return: string with capitalized words
- */
-char *cap_string(char *s)
-{
-	char *ptr = s;
-	int foundDelimit = 1;
-
-	while (*s)
+	for (i = 0; str[i]; ++i)
 	{
-		if (isDelimiter(*s))
-			foundDelimit = 1;
-		else if (isLower(*s) && foundDelimit)
+		if (i == 0)
+			if (str[i] >= 97 && str[i] <= 122)
+				str[i] = str[i] - 32;
+
+		for (j = 0; j < 14; j++)
 		{
-			*s -= 32;
-			foundDelimit = 0;
+			if (str[i - 1] == ptr[j])
+				if (str[i] >= 97 && str[i] <= 122)
+					str[i] = str[i] - 32;
 		}
-		else
-			foundDelimit = 0;
-		s++;
 	}
-	return (ptr);
+
+	return (str);
 }

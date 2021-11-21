@@ -1,12 +1,9 @@
 #include "main.h"
-
 /**
- * *_strncpy - copies the string pointed to by src.
+ * _strncpy - copies a string.
+ * @
  *
- * @dest: pointer to the buffer.
- * @src: pointer to the source string.
- * @n: length of src.
- * Return: char
+ * Return: ALways 0.
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -17,6 +14,9 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[i] = src[i];
 	}
 	for (; i < n; i++)
+	{
 		dest[i] = '\0';
+	}
+
 	return (dest);
 }

@@ -1,16 +1,18 @@
 #include "main.h"
-#include <string.h>
-
 /**
- * _strlen - Swap integer
- * @s: pointer
- * Return: void
+ * _strlen - returns the length of a string.
+ *
+ * @s: character to be tested.
+ *
+ * Return: ALways 0.
  */
 int _strlen(char *s)
 {
-int i = 0;
-while (s[i])
-	i++;
+	int len;
 
-return (i);
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+
+	return (len);
 }

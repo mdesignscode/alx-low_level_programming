@@ -1,23 +1,20 @@
 #include "main.h"
-
 /**
- * *_strchr - fills memory with a constant byte.
- * @s: pointer to put the constant
- * @c: constant
- * Return: s
+ * _strchr - locates a character in a string.
+ * @s: pointer to string.
+ * @c: character to be located.
+ *
+ * Return: s.
  */
-
 char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i] >= '\0'  ; i++)
+	for (i = 0; s[i]; i++)
 	{
 		if (s[i] == c)
-		{
 			return (s + i);
-		}
+		s++;
 	}
-
-	return ('\0');
+	return (s);
 }

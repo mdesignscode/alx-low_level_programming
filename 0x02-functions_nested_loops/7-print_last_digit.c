@@ -1,7 +1,6 @@
 #include "main.h"
-
 /**
- * _abs - prints the last digit
+ * _abs - prints the absolute value of a digit
  * @n: interger to be tested
  *
  * Return: value of the last digit
@@ -11,7 +10,7 @@ int _abs(int n)
 	if (n >= 0)
 		return (n);
 	else
-		return (-1 * n);
+		return (-n * n);
 }
 /**
  * print_last_digit - prints the last digit of a number
@@ -21,9 +20,9 @@ int _abs(int n)
 
 int print_last_digit(int n)
 {
-	int lastDigit;
+	int lD;
 
-	lastDigit = _abs((n % 10));
-	_putchar(lastDigit + 48);
-	return (lastDigit);
+	lD = _abs((n % 10));
+	_putchar(lD);
+	return (lD);
 }
