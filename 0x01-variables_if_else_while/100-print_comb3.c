@@ -16,7 +16,11 @@ int main(void)
 		{
 			putchar(d1);
 			putchar(d2);
-			putchar(32);
+			if (d1 < (58 - 2))
+			{
+				putchar(44);
+				putchar(32);
+			}
 			d2++;
 		}
 		d1++;
