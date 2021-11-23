@@ -13,9 +13,6 @@ void print_to_98(int n)
 {
 	int i, j;
 
-	int sep1 = 0;
-	int sep2 = 0;
-
 	for (i = n; i < 99; i++)
 	{
 		printf("%d", i);
@@ -27,18 +24,17 @@ void print_to_98(int n)
 		}
 	}
 
-	for (j = n; j > 97; j--)
+	for (i = n, j = 0; i > 97; i--, j++)
 	{
 		if (n > 98)
 		{
+			if (j > 0)
+			{
+				putchar(44);
+				putchar(32);
+			}
 
-			putchar(sep1);
-			putchar(sep2);
-
-			printf("%d", j);
-
-			sep1 = 44;
-			sep2 = 32;
+			printf("%d", i);
 		}
 	}
 	putchar(10);

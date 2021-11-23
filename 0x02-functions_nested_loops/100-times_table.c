@@ -22,14 +22,12 @@ void print_times_table(int n)
 			{
 				_putchar(48 + j);
 			}
-
 			else if (product < 10)
 			{
 				_putchar(32);
 				_putchar(32);
 				_putchar(product + 48);
 			}
-
 			else if (product < 100)
 			{
 				_putchar(32);
