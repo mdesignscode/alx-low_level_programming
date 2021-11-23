@@ -13,6 +13,7 @@ void print_to_98(int n)
 {
 	int i, j;
 
+	
 	int sep1 = 0;
 	int sep2 = 0;
 
@@ -37,8 +38,8 @@ void print_to_98(int n)
 
 			printf("%d", j);
 
-			sep1 = 44;
-			sep2 = 32;
+			sep1 = ',';
+			sep2 = ' ';
 		}
 	}
 	putchar(10);
