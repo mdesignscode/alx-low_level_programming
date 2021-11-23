@@ -10,7 +10,7 @@ int main(void)
 
 	printf("%lu, %lu, ", a, b);
 
-	for (c = 3; c <= 98; c++)
+	for (c = 3; c < 98; c++)
 	{
 		sum = a + b;
 		printf("%lu", sum);
@@ -18,7 +18,7 @@ int main(void)
 		a = b;
 		b = sum;
 
-		if (c < 98)
+		if (c < 97)
 		{
 			putchar(44);
 			putchar(32);
