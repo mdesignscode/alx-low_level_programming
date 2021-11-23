@@ -7,17 +7,14 @@
 int main(void)
 {
 	int c;
-	unsigned long int a = 1, b = 2, sum;
-
-	printf("%lu, %lu, ", a, b);
-
-	for (c = 3; c < 98; c++)
+	unsigned long int a = 0, b = 1, sum = 0;
+	for (c = 0; c < 98; c++)
 	{
 		sum = a + b;
-		printf("%lu", sum);
-
 		a = b;
 		b = sum;
+		printf("%lu", sum);
+
 
 		if (c < 97)
 		{
