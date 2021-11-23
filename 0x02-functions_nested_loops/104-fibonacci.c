@@ -8,6 +8,7 @@ int main(void)
 {
 	int c;
 	unsigned long int a = 0, b = 1, sum = 0;
+
 	for (c = 0; c < 98; c++)
 	{
 		sum = a + b;

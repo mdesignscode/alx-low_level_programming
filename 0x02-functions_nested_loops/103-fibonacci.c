@@ -5,7 +5,7 @@
  *
  * Return: 0.
  */
-int main (void)
+int main(void)
 {
 	int n1 = 0, n2 = 1, n3, sum = 0;
 
@@ -18,12 +18,10 @@ int main (void)
 
 		if (n3 % 2 == 0)
 		{
-			 sum += n3;
+			sum += n3;
 		}
-
 	}
 	printf("%d", sum);
 	putchar(10);
 	return (0);
-
 }
