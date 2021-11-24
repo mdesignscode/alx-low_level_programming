@@ -2,6 +2,7 @@
 #include <stdio.h>
 /**
  * print_number - prints an integer.
+ * @n: integer to be tested.
  *
  * Return: Always 0.
  *

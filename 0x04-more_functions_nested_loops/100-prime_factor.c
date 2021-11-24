@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
+ * primeFactors - finds the largest prime factor.
  *
- * primeFactors: finds the largest prime factor.
- *
+ * main - finds and prints the largest prime factor of the number 612852475143.
  * @n: integer to be tested.
  *
  * Return: nothing.
@@ -27,11 +27,9 @@ void primeFactors(long int n)
 /**
  * main - finds and prints the largest prime factor of the number 612852475143.
  *
- * primeFactors: finds the largest prime factor.
+ * primeFactors - finds the largest prime factor.
  *
- * @n: integer to be tested.
- *
- * Return: Always 0.
+ * Return: nothing.
  */
 int main(void)
 {
