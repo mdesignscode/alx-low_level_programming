@@ -1,5 +1,29 @@
 #include <stdio.h>
-#include <math.h>
+/**
+ *
+ * primeFactors: finds the largest prime factor.
+ *
+ * @n: integer to be tested.
+ *
+ * Return: nothing.
+ */
+void primeFactors(long int n)
+{
+	long int l;
+	int i;
+
+	for (i = 2; n > 1; i++)
+	{
+		l = 0;
+		while (n % i == 0)
+		{
+			if (n > l)
+				l = n;
+			n = n / i;
+		}
+	}
+	printf("%ld\n", l);
+}
 /**
  * main - finds and prints the largest prime factor of the number 612852475143.
  *
@@ -9,33 +33,8 @@
  *
  * Return: Always 0.
  */
-void primeFactors(long int n)
-{
-	int i;
-
-	while (n % 2 == 0)
-	{
-		i = 2;
-		n = n / 2;
-	}
-	for (i = 3; i <= sqrt(n); i++)
-	{
-		while (n % i == 0)
-		{
-			n = n / i;
-			i++;
-		}
-	}
-	if (n > 2)
-	{
-		printf("%ld\n", n);
-	}
-}
 int main(void)
 {
-	long int n;
-
-	n = 612852475143;
-	primeFactors(n);
+	primeFactors(612852475143);
 	return (0);
 }
