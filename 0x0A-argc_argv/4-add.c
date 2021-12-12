@@ -3,6 +3,8 @@
 #include <stdlib.h>
 /**
  * main -adds positive numbers.
+ * @argc: number of arguments provided.
+ * @argv: string of arguments provided.
  *
  * Return: 0.
  */
