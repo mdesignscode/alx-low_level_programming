@@ -24,31 +24,28 @@ int _strlen(char *s)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int l1, l2, l3, i = 0;
-	char *a;
+	int i, j, k, l;
+	char *p;
 
-	l1 = _strlen(s1);
-	l2 = _strlen(s2);
-	l3 = l1 + l2 + 1;
-	a = malloc(sizeof(char) * l3);
+	if (!s1)
+		i = 0;
+	else
+		for (i = 0; str[i]; i++)
+			;
 
-	if (!a || !s1 || !s2 || (!s1 && !s2))
+	if (!s2)
+		j = 0;
+	else
+		for (j = 0; s2[j]; j++)
+			;
+	k = i + j + 1;
+	p = malloc(sizeof(char) * k);
+	if (!p)
 		return (NULL);
-
-	while (*s1 != '\0')
-	{
-		a[i] = *s1;
-		s1++;
-		i++;
-	}
-	while (*s2 != '\0')
-	{
-		a[i] = *s2;
-		s2++;
-		i++;
-	}
-
-	a[i] = '\0';
-
-	return (a);
+	for (l = 0; l < i; l++)
+		p[l] = s1[l];
+	for (l = 0; l < j; l++)
+		p[l] = s2[l];
+	p[l] = '\0';
+	return (p);
 }
