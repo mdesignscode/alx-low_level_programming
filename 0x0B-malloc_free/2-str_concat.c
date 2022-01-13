@@ -27,13 +27,18 @@ char *str_concat(char *s1, char *s2)
 	int l1, l2, l3, i, j;
 	char *p;
 
+	if (!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
+
 	l1 = _strlen(s1);
 	l2 = _strlen(s2);
 	l3 = l1 + l2 + 1;
 
 	p = malloc(sizeof(char) * l3);
 
-	if (!p || !s1 || !s2)
+	if (!p)
 		return (NULL);
 
 	for (i = 0; s1[i]; i++)
