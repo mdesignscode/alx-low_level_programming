@@ -1,24 +1,26 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
- * argstostr - concatenates all the arguments of my program.
+ * argstostr - concatenates all the arguments of the program.
  * @ac: argument count.
  * @av: argument vector.
  * Return: 0.
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k, l;
-	char* p;
+	int i, j, k = 0, l = 0, c = 0;
+	char *p;
 
-	l = 0;
-	for (i = 0; i < ac; i++, l++)
+	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j]; j++, l++)
-			;
+		for (j = 0; av[i][j]; j++)
+			l++;
+		c++;
 	}
-	p = malloc(sizeof(char) * l);
-	k = 0;
+
+	p = malloc(sizeof(char) * c + l + 1);
+	if (!ac || !av || !p)
+		return (NULL);
 	for (i = 0; i < ac; i++, k++)
 	{
 		for (j = 0; av[i][j]; j++, k++)
@@ -26,7 +28,5 @@ char *argstostr(int ac, char **av)
 		p[k] = '\n';
 	}
 	p[k] = '\0';
-	if (!ac || !av || !p)
-		return (NULL);
 	return (p);
 }
