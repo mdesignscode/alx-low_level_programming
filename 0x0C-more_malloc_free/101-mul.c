@@ -1,10 +1,12 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * _puts - prints a string, followed by a new line.
- * @str: string to be printed.
- * Return: nothing.
+ * _puts - prints a string, followed by a new line,
+ * @str: pointer to the string to print
+ * Return: void
 */
+
+
 void _puts(char *str)
 {
 	int i = 0;
@@ -14,17 +16,18 @@ void _puts(char *str)
 		_putchar(str[i]);
 		i++;
 	}
+
 }
 
 /**
  * _atoi - convert a string to an integer.
- * @s: string to be converted
- * Return: converted integer
+ * @s: char type string
+ * Return: integer converted
  */
 
-int _atoi(char *s)
+int _atoi(const char *s)
 {
-	int sign = 1;
+    	int sign = 1;
 	unsigned long int resp = 0, firstNum, i;
 
 	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
@@ -46,8 +49,8 @@ int _atoi(char *s)
 
 /**
  * print_int - prints an integer.
- * @n: integer to be printed.
- * Return: 0.
+ * @n: int
+ * Return: 0
  */
 
 void print_int(unsigned long int n)

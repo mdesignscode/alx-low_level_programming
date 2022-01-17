@@ -38,14 +38,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	l2 = _strlen(s2);
 	if (n >= l2)
 	{
-		l3 = l1 + l2 + 1;
+		l3 = l2 + 1;
 		p = malloc(sizeof(char) * l3);
 		if (!p)
 			return (NULL);
-		for (i = 0; s1[i]; i++)
-			p[index++] = s1[i];
 		for (j = 0; s2[j]; j++, index++)
-			p[l1 + j] = s2[j];
+			p[j] = s2[j];
 		p[index] = '\0';
 	}
 	else
