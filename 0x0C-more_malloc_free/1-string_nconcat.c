@@ -38,11 +38,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	l2 = _strlen(s2);
 	if (n >= l2)
 	{
+		n = l2;
 		l3 = l2 + 1;
 		p = malloc(sizeof(char) * l3);
 		if (!p)
 			return (NULL);
-		for (j = 0; s2[j]; j++)
+		for (j = 0; j < n; j++)
 			p[j] = s2[j];
 		p[j] = '\0';
 	}
