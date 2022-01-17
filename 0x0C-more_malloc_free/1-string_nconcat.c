@@ -42,9 +42,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		p = malloc(sizeof(char) * l3);
 		if (!p)
 			return (NULL);
-		for (j = 0; s2[j]; j++, index++)
+		for (j = 0; s2[j]; j++)
 			p[j] = s2[j];
-		p[index] = '\0';
+		p[j] = '\0';
 	}
 	else
 	{
