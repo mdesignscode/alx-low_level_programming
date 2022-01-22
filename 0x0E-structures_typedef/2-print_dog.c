@@ -9,7 +9,7 @@
  */
 void print_dog(struct dog *d)
 {
-	if (!d)
+	if (d == NULL)
 	{
 		printf("Name: %s\nAge: %f\nOwner: %s\n", NC(d->name), d->age, NC(d->owner));
 	}
