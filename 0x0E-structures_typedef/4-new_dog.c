@@ -19,7 +19,6 @@ int _strlen(char *s)
 /**
  * scopy - copies a string in memory.
  * @src: source string.
- * @dest: destination string.
  *
  * Return: pointer to copy of string.
  */
