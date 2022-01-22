@@ -29,7 +29,7 @@ char *scopy(char *src)
 
 	if (!src)
 		return (NULL);
-	len = _strlen(src) + 1;
+	len = _strlen(src);
 	copy = malloc(sizeof(char) * len);
 	if (!copy)
 		return (NULL);
