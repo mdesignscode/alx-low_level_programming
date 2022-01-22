@@ -29,7 +29,7 @@ char *scopy(char *src)
 
 	if (!src)
 		return (NULL);
-	len = _strlen(src);
+	len = _strlen(src) + 1;
 	copy = malloc(sizeof(char) * len);
 	if (!copy)
 		return (NULL);
@@ -50,12 +50,6 @@ char *scopy(char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
-	/**
-	 * create space for size of new_dog
-	 * store copy of name and owner
-	 * RETURN null if space fails
-	 *
-	 */
 	new_dog = malloc(sizeof(dog_t));
 	if (!new_dog)
 		return (NULL);
@@ -72,6 +66,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(new_dog);
 		return (NULL);
 	}
-	(*new_dog).age = age;
+	new_dog->age = age;
 	return (new_dog);
 }
