@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
-#define NC(v) (v ? v : "nil")
+#define NC(v) (v ? v : "(nil)")
 /**
  * print_dog - prints a struct dog.
  * @d: pointer to structure.
