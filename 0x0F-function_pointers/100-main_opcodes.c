@@ -49,6 +49,6 @@ int main(int argc, char* argv[])
 	{
 		printf("%02hhx ", code[index]);
 	}
-	printf("\n");
+	printf("%02hhx\n", code[index]);
 	return (0);
 }
