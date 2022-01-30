@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	 *	printf(Error) && exit with status 2
 	 * print printf("%02hhx\n");
 	 */
-	int index, bytes;
+	int index, bytes, ctr;
 	char *code;
 
 	bytes = atoi(argv[1]);
@@ -45,10 +45,11 @@ int main(int argc, char* argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	for (index = 0; index < bytes - 1; index++)
+	for (index = ctr = 0; index < bytes - 1; index++, ctr++)
 	{
 		printf("%02hhx ", code[index]);
+		if (ctr > 0)
+			printf("%02hhx\n", code[index]);
 	}
-	printf("%02hhx\n", code[index]);
 	return (0);
 }
