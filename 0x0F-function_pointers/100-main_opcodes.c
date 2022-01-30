@@ -47,9 +47,9 @@ int main(int argc, char* argv[])
 	}
 	for (index = ctr = 0; index < bytes - 1; index++, ctr++)
 	{
-		printf("%02hhx ", code[index]);
 		if (ctr > 0)
 			printf("%02hhx\n", code[index]);
+		printf("%02hhx ", code[index]);
 	}
 	return (0);
 }
