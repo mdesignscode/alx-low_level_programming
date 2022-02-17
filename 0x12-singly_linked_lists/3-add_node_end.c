@@ -10,8 +10,8 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_p ptr, temp;
-	charptr dups;
+	struct list_s *ptr, *temp;
+	char* dups;
 
 	ptr = *head;
 	if (!str)

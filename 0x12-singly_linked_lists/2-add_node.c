@@ -10,7 +10,7 @@
 list_t *add_node(list_t **head, const char *str)
 {
 
-	list_p newnode;
+	struct list_s *newnode;
 	unsigned int index = 0;
 
 	if (!str)

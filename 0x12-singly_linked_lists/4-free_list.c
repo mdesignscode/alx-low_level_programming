@@ -8,7 +8,7 @@
  */
 void free_list(list_t *head)
 {
-	list_p temp, current;
+	struct list_s *temp, *current;
 
 	current = head;
 
