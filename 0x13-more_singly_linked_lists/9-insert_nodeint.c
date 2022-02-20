@@ -6,8 +6,8 @@
  * @head: pointer to list.
  * @n: the value of the new node.
  *
- *
  * Return: the address of the new node, or NULL if it failed.
+ *
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
@@ -21,6 +21,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	temp = *head;
 	new_node->n = n;
 	new_node->next = NULL;
+
+	if (idx == 0)
+	{
+		*head = new_node;
+		new_node->next = temp;
+	}
 
 	if (!!temp)
 	{
