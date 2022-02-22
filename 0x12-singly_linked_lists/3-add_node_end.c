@@ -1,4 +1,19 @@
 #include "lists.h"
+/**
+ * _strlen - counts the length of a string.
+ * @s: string to be counted.
+ *
+ * Return: length of string.
+ */
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+
+	return (len);
+}
 
 /**
  * add_node_end - adds a new node at the end of a list_t list.
