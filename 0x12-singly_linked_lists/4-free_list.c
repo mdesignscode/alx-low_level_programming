@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * free_list - frees a list_t list.
- * @str: pointer to first node.
+ * @head: pointer to first node.
  *
  * Return: nothing.
  */
