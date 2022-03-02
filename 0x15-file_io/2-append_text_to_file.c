@@ -1,5 +1,20 @@
 #include "main.h"
 /**
+ * _strlen - counts the length of a string.
+ * @s: string to be counted.
+ *
+ * Return: length of string.
+ */
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+
+	return (len);
+}
+/**
  * append_text_to_file - appends text at the end of a file.
  * @filename: name of file to be created.
  * @text_content: a NULL terminated string to write to the file.
