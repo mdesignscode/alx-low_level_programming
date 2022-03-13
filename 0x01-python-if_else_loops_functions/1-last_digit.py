@@ -10,5 +10,5 @@ if last > 5:
     print('{}{} is {}{}greater than 5'.format(s, number, last, s2))
 elif last == 0:
     print('{}{} is {}{}0'.format(s, number, last, s2))
-elif last < 6 and not 0:
+elif last < 6 and last != 0:
     print('{}{} is {}{}less than 6 and not 0'.format(s, number, last, s2))
