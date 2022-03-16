@@ -2,10 +2,10 @@
 from sys import argv
 from calculator_1 import add, mul, div, sub
 
-argc = len(argv) - 1
+argc = len(argv)
 operators = '+-*/'
 
-if argc != 3:
+if argc != 4:
     print('Usage: ./100-my_calculator.py <a> <operator> <b>')
     exit(1)
 
