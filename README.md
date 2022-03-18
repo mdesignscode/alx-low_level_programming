@@ -1,1 +1,1 @@
-Today I'm starting to program in __Python__!
+This is my Journey in learning __Python__!
