@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 
 	index = 0;
 	ctr = count - 1;
-	while (index < count)
+	while (index < count / 2)
 	{
 		if (space[index] != space[ctr])
 			return (0);
