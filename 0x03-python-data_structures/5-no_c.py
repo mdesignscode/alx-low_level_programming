@@ -3,6 +3,8 @@
 Removes all characters c and C from a string.
 Return: the new string
 """
+
+
 def no_c(my_string):
     str_copy = ''
     for letter in range(0, len(my_string)):

@@ -3,6 +3,8 @@
 Returns a tuple with the length of a string and its first character.
 Return: None
 """
+
+
 def multiple_returns(sentence):
     if sentence == "":
         f_char = None
