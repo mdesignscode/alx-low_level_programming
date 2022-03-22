@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 search_replace: Replaces all occurrences of an element
 by another in a new list.

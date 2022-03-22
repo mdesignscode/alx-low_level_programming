@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 update_dictionary: replaces or adds key/value in a dictionary.
 Return: new dictionary

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 uniq_add: adds all unique integers in a list (only once for each integer).
 Return: sum of unique integers

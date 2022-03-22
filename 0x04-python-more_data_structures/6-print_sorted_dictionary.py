@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 print_sorted_dictionary: prints a dictionary by ordered keys.
 Return: None

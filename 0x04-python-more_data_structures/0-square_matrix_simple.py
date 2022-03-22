@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 square_matrix_simple: computes the square value of all integers of a matrix.
 Return: a new matrix:

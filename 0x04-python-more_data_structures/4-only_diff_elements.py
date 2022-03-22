@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 returns a set of all elements present in only one set.
 Return: a set

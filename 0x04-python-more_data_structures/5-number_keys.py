@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 number_keys: returns the number of keys in a dictionary.
 Return: number of keys

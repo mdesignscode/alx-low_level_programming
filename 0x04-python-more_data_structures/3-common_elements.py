@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Returns a set of common elements in two sets.
 Return: a set

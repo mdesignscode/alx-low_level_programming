@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 best_score: returns a key with the biggest integer value.
 Return: None if no score found
