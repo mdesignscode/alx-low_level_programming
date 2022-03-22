@@ -1,10 +1,10 @@
-#!/usr/bin/python3
 """
-update_dictionary: replaces or adds key/value in a dictionary.
-Return: new dictionary
+simple_delete: deletes a key in a dictionary.
+Return: None
 """
 
 
-def update_dictionary(a_dictionary, key, value):
-    a_dictionary.pop(key, None)
+def simple_delete(a_dictionary, key=""):
+    if key in a_dictionary:
+        del a_dictionary[key]
     return a_dictionary
