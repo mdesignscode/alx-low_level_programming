@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 simple_delete: deletes a key in a dictionary.
 Return: None
