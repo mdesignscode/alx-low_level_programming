@@ -13,8 +13,8 @@ def roman_to_int(roman_string):
 
     for number in range(str_len):
         if number + 1 != str_len and roman_style[roman_string[number]] \
-            < roman_style[roman_string[number + 1]]:
-                int_value -= roman_style[roman_string[number]]
+                < roman_style[roman_string[number + 1]]:
+            int_value -= roman_style[roman_string[number]]
         else:
             int_value += roman_style[roman_string[number]]
 
