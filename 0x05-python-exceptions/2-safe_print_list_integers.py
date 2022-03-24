@@ -7,9 +7,12 @@ def safe_print_list_integers(my_list=[], x=0):
         x (int, optional): number of elements. Defaults to 0.
     """
     printed = 0
-    for value in range(x):
-        if type(my_list[value]) == type(123):
-            print('{:d}'.format(my_list[value]), end='')
-            printed += 1
-    print()
-    return printed
+    try:
+        for item in range(x):
+            if type(my_list[item]) == type(123):
+                print('{:d}'.format(int(my_list[item])), end='')
+                printed += 1
+        print()
+        return printed
+    except TypeError:
+        pass
