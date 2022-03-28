@@ -1,7 +1,7 @@
 '''defines a square'''
 
 
-# class Square:
-#     """an empty class
-#     """
-#     pass
+class Square:
+    """an empty class
+    """
+    pass
