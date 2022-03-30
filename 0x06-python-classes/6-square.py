@@ -40,7 +40,7 @@ class Square:
                 not all(isinstance(i, int) for i in value) or \
                 not all(i >= 0 for i in value):
             raise TypeError('position must be a tuple of 2 positive integers')
-        # self.__position = value
+        self.__position = value
 
     def __init__(self, size=0, position=(0, 0)):
         """initializes size and position of square
@@ -61,8 +61,13 @@ class Square:
         if self.__size == 0:
             print()
 
-        else:
+        elif self.__position[1] == 0:
             for i in range(self.__size):
                 [print(' ', end='') for j in range(self.__position[0])]
+                [print('#', end='') for n in range(self.__size)]
+                print()
+
+        else:
+            for i in range(self.__size):
                 [print('#', end='') for n in range(self.__size)]
                 print()
