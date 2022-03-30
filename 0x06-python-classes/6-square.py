@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-"""defines as square"""
+"""defines a square"""
 
 
 class Square:
@@ -24,20 +23,23 @@ class Square:
             raise TypeError('size must be >= 0')
 
     @property
-    def size(self):
-        """retrieving size of square"""
-        return self.__size
+    def position(self):
+        """retrieving position of square"""
+        return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """setting the position of a square
 
         Args:
             value (int, int): tuple of 2 positive integers to set new position
         """
-        self.__position = value
-        if isinstance(value, int, int) is False:
+        if not isinstance(value, tuple) or \
+                len(value) != 2 or \
+                not all(isinstance(i, int) for i in value) or \
+                not all(i >= 0 for i in value):
             raise TypeError('position must be a tuple of 2 positive integers')
+        # self.__position = value
 
     def __init__(self, size=0, position=(0, 0)):
         """initializes size and position of square
@@ -55,17 +57,11 @@ class Square:
 
     def my_print(self):
         """prints a square to stdout"""
-        if self.__position[1] == 0 or self.__position is None:
-            for i in range(self.__size):
-                for x in range(self.__position[0]):
-                    print(' ', end='')
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
-        else:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
         if self.__size == 0:
             print()
+
+        else:
+            for i in range(self.__size):
+                [print(' ', end='') for j in range(self.__position[0])]
+                [print('#', end='') for n in range(self.__size)]
+                print()
