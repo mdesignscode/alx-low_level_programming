@@ -65,4 +65,6 @@ class Rectangle:
         """prints a rectangle using '#'"""
         height = self.__height
         width = self.__width
+        if width == 0 or height == 0:
+            return ""
         return '\n'.join('#' * width for _ in range(height))

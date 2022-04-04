@@ -10,7 +10,6 @@ class Rectangle:
         print_symbol (any): The symbol used for string representation.
     """
     number_of_instances = 0
-    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """initialize the dimensions of a rectangle
@@ -76,7 +75,7 @@ class Rectangle:
         n_s = str(self.print_symbol)
         if width == 0 or height == 0:
             return ""
-        return '\n'.join(self.print_symbol * width for _ in range(height))
+        return '\n'.join('#' * width for _ in range(height))
 
     def __repr__(self):
         """return a Rectangle object to be used in eval"""
@@ -101,7 +100,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        elif area_1 == area_2  or area_1 > area_2:
+        elif area_1 == area_2 or area_1 > area_2:
             return rect_1
         else:
             return rect_2
