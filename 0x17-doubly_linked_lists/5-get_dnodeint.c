@@ -12,16 +12,17 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	d_l_pointer temp;
 
 	temp = head;
-	for (i = 0; i < index; i++)
-		temp = temp->next;
-
-	temp = head;
 	while (temp)
 	{
 		nodes++;
 		temp = temp->next;
 	}
-	if (!head || index > nodes)
+	if (index > nodes)
 		return NULL;
+
+	temp = head;
+	for (i = 0; i < index; i++)
+		temp = temp->next;
+
 	return (temp);
 }
