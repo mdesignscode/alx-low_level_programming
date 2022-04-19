@@ -5,8 +5,8 @@ OBJ = main.o school.o
 RM = rm
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(OBJ) $(CFLAGS)
-	$(CC)  $(OBJ) -o $(NAME)
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) -f *~ $(NAME)
