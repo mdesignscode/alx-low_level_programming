@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Description of Island:
 
     0 represents a water zone
