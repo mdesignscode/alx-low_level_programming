@@ -38,6 +38,28 @@ char *scopy(const char *src)
 	return (copy);
 }
 /**
+ * new_t_node - creates a new_node.
+ * @key: key of table.
+ * @value: value of key.
+ * @head: linked list.
+ *
+ * Return: pointer to new node.
+ */
+hash_node_t *new_t_node(hash_node_t *head, char *key, char *value)
+{
+	node_pointer new_node;
+
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
+		return (NULL);
+
+	new_node->key = key;
+	new_node->value = value;
+	new_node->next = head;
+
+	return (new_node);
+}
+/**
  * hash_table_set - adds an element to the hash table.
  * Description: key cannot be an empty string, but value can be.
  * If there's a collision, the node will be added to the head of the list.
@@ -49,34 +71,35 @@ char *scopy(const char *src)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	node_pointer new_node, address;
-	int mapped;
-	char *val, *k;
+	node_pointer head, temp, new_node;
+	char_pointer val, k;
+	unsigned long int mapped;
 
-	new_node = malloc(sizeof(hash_node_t));
-	if (!new_node)
+	if (_strlen(key) == 0 || !key || !ht)
 		return (0);
 
 	val = scopy(value);
 	k = scopy(key);
 
-	mapped = hash_djb2((unsigned char *) k) % ht->size;
+	mapped = key_index((unsigned char *)key, ht->size);
+	head = ht->array[mapped];
+	temp = head;
 
-	new_node->key = k;
-	new_node->value = val;
-	new_node->next = NULL;
+	while (temp)
+	{
+		if (_strcmp(temp->key, k) == 1)
+		{
+			temp->value = val;
+			return (1);
+		}
+		temp = temp->next;
+	}
 
-	if (!ht->array[mapped])
-	{
-		ht->array[mapped] = new_node;
-		return (1);
-	}
-	else
-	{
-		address = ht->array[mapped];
-		new_node->next = address;
-		address = new_node;
-		return (1);
-	}
-	return (0);
+	new_node = new_t_node(head, k, val);
+	if (!new_node)
+		return (0);
+
+	ht->array[mapped] = new_node;
+
+	return (1);
 }
