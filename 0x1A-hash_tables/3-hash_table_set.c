@@ -62,27 +62,28 @@ int _strcmp(const char *str1, const char *str2)
 	return (1);
 }
 /**
- * new_t_node - creates a new_node.
- * @key: key of table.
- * @value: value of key.
+ * insert_node - inserts a node at head of linked list.
  * @head: linked list.
+ * @key: key to be added.
+ * @value: value associated with key.
  *
- * Return: pointer to new node.
+ * Return: nothing.
  */
-hash_node_t *new_t_node(hash_node_t *head, char *key, char *value)
+void insert_node(hash_node_t **head, char *key, char *value)
 {
 	node_pointer new_node;
 
-	new_node = malloc(sizeof(hash_node_t));
+	new_node = malloc(sizeof(hash_node_t *));
 	if (!new_node)
-		return (NULL);
+		return;
 
 	new_node->key = key;
 	new_node->value = value;
-	new_node->next = head;
+	new_node->next = *head;
 
-	return (new_node);
+	*head = new_node;
 }
+
 /**
  * hash_table_set - adds an element to the hash table.
  * Description: key cannot be an empty string, but value can be.
@@ -95,35 +96,38 @@ hash_node_t *new_t_node(hash_node_t *head, char *key, char *value)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	node_pointer head, temp, new_node;
-	char_pointer val, k;
-	unsigned long int mapped;
+	u_long index;
+	node_pointer head;
 
-	if (_strlen(key) == 0 || !key || !ht)
+	if (_strlen(key) == 0 || !key || !value || !ht)
 		return (0);
 
-	val = scopy(value);
-	k = scopy(key);
+	index = key_index((unsigned char *)key, ht->size);
 
-	mapped = key_index((unsigned char *)key, ht->size);
-	head = ht->array[mapped];
-	temp = head;
-
-	while (temp)
+	head = ht->array[index];
+	while (head)
 	{
-		if (_strcmp(temp->key, k) == 1)
+		if (_strcmp(head->key, key) == 1)
 		{
-			temp->value = val;
+			head->value = scopy(value);
 			return (1);
 		}
-		temp = temp->next;
+		head = head->next;
 	}
 
-	new_node = new_t_node(head, k, val);
-	if (!new_node)
-		return (0);
-
-	ht->array[mapped] = new_node;
-
-	return (1);
+	if (!ht->array[index])
+	{
+		head = 0;
+		insert_node(&head, scopy(key), scopy(value));
+		ht->array[index] = head;
+		return (1);
+	}
+	else
+	{
+		head = ht->array[index];
+		insert_node(&head, scopy(key), scopy(value));
+		ht->array[index] = head;
+		return (1);
+	}
+	return (0);
 }
