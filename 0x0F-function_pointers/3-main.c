@@ -1,44 +1,43 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 /**
- * main - Entry point
- * @argc: argument count
- * @argv: argument vector
- * Return: int
+ * main - main fuction.
+ * @argc: argument count.
+ * @argv: argument vector.
+ *
+ * Return: 0.
  */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	char *sign;
-	char operator;
-	int a, b, answer;
-	int (*ptr)(int, int);
+	int result, num1, num2;
+	char *operator;
+	int (*f)(int a, int b);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	operator = argv[2][0];
-	if ((operator != '*' && operator != '+' && operator != '-'
-	     && operator != '/'  && operator != '%') || argv[2][1] != '\0')
+
+	operator = argv[2];
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	f = get_op_func(operator);
+	if (!f)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	if ((operator == '/' || operator == '%') && b == 0)
+
+	if ((operator[0] == '/' || operator[0] == '%') && (num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	sign = argv[2];
-	ptr = get_op_func(sign);
-	answer = (*ptr)(a, b);
-	printf("%d\n", answer);
+
+	result = f(num1, num2);
+
+	printf("%d\n", result);
 	return (0);
 }

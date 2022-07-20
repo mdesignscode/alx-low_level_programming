@@ -73,7 +73,7 @@ void insert_node(hash_node_t **head, char *key, char *value)
 {
 	node_pointer new_node;
 
-	new_node = malloc(sizeof(hash_node_t *));
+	new_node = malloc(sizeof(hash_node_t));
 	if (!new_node)
 		return;
 
