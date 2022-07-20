@@ -1,22 +1,28 @@
 #include "hash_tables.h"
+
 /**
- * sentinel_list - creates a sentinel list for table elements.
+ * insert_node - inserts a node at head of linked list.
+ * @head: linked list.
+ * @key: key to be added.
+ * @value: value associated with key.
  *
- * Return: pointer to new sentinel list.
+ * Return: nothing.
  */
-hash_node_t *sentinel_list()
+void insert_node(hash_node_t **head, char *key, char *value)
 {
-	node_pointer aux;
+	node_pointer new_node;
 
-	aux = malloc(sizeof(hash_node_t));
-	if (!aux)
-		return (NULL);
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
+		return;
 
-	aux->key = 0;
-	aux->next = 0;
-	aux->value = 0;
-	return (aux);
+	new_node->key = key;
+	new_node->value = value;
+	new_node->next = *head;
+
+	*head = new_node;
 }
+
 /**
  * hash_table_create - creates a hash table.
  * @size: the size of the array.
@@ -34,16 +40,13 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	table->size = size;
-	table->array = malloc(sizeof(hash_node_t) * size);
+	table->array = malloc(sizeof(hash_node_t *) * size);
 	if (!table->array)
-	{
-		free(table);
 		return (NULL);
-	}
 
 	for (index = 0; index < size; index++)
 	{
-		table->array[index] = sentinel_list();
+		table->array[index] = 0;
 	}
 
 	return (table);

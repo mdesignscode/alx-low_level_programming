@@ -14,11 +14,15 @@ void delete_linked_list(hash_node_t *head)
 	{
 		next = head->next;
 		free(head->key);
+		head->key = NULL;
 		free(head->value);
+		head->value = NULL;
 		free(head);
+		head = NULL;
 		head = next;
 	}
 }
+
 /**
  * hash_table_delete - deletes a hash table.
  * @ht: table to delete.
@@ -31,7 +35,6 @@ void hash_table_delete(hash_table_t *ht)
 
 	for (i = 0; i < ht->size; i++)
 		delete_linked_list(ht->array[i]);
-
 
 	free(ht->array);
 	ht->array = NULL;
